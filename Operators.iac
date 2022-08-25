@@ -1,0 +1,15 @@
+(path op
+    (proc ic.rt op.Addi:i§ii   /op:   int= int + int.  
+        (move r0 [dp-4])
+        (move r1 [dp-5])
+        (addi r0 r1)
+        (subt dp 3)
+        (move [dp] r0)
+        (return)
+    )
+    (proc rt main:§cA2
+        (var a:int 3)
+        (var b:int 5)
+        (ic.rt call op.Addi:i§ii)
+    )
+)
